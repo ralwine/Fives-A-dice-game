@@ -14,13 +14,16 @@ function rollTwoDice(): string {
   // Main function to run the program
   if (die1 === 6 && die2 === 6) {
     // double 6 is a bus crash; a bust!
-    return "Bus Crash!";
-    // other doubles roll again
+    return "Bus Crash!!!!!, TURN OVER!";
   } else if (die1 === die2) {
+    // other doubles roll again
     return "Roll again!";
   } else if (rollSum === 5) {
     // If the sum of the dice is 5, let the user roll again
     return "Roll again!";
+  }else if (die1 === 5|| die2 === 5){
+    // If either die is a 5, let the use roll again
+    return "Roll again!"
   } else {
     return "TURN OVER!";
   }
