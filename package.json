@@ -1,0 +1,15 @@
+{
+  "name": "fives-a-dice-game",
+  "version": "1.0.0",
+  "description": "TS program for a dice game called Fives",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "ts-node dice.ts"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ts-node": "^10.9.2"
+  }
+}
