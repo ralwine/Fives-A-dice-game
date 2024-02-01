@@ -1,42 +1,40 @@
 // Define a function to roll a single die
-function rollDie(): number {
+function rollDie() {
     return Math.floor(Math.random() * 6) + 1;
 }
-
 // Define a function to roll two dice and return the sum
-function rollTwoDice(): { die1: number, die2: number, rollSum: number } {
-    const die1 = rollDie();
-    const die2 = rollDie();
-    const rollSum = die1 + die2;
-    return { die1, die2, rollSum };
+function rollTwoDice() {
+    var die1 = rollDie();
+    var die2 = rollDie();
+    var rollSum = die1 + die2;
+    return { die1: die1, die2: die2, rollSum: rollSum };
 }
-
 // Main function to run the program
 function main() {
-    const resultContainer = document.getElementById('result');
-    const rollButton = document.getElementById('rollButton');
+    var resultContainer = document.getElementById('result');
+    var rollButton = document.getElementById('rollButton');
     console.log('Button clicked');
     if (resultContainer && rollButton) {
         rollButton.addEventListener('click', function () {
-            const { die1, die2, rollSum } = rollTwoDice();
-            let resultMessage: string;
-
+            var _a = rollTwoDice(), die1 = _a.die1, die2 = _a.die2, rollSum = _a.rollSum;
+            var resultMessage;
             if (die1 === 6 && die2 === 6) {
                 resultMessage = "Bus Crash!!!!!, TURN OVER!";
-            } else if (die1 === die2) {
+            }
+            else if (die1 === die2) {
                 resultMessage = "Roll again!";
-            } else if (rollSum === 5 || die1 === 5 || die2 === 5) {
+            }
+            else if (rollSum === 5 || die1 === 5 || die2 === 5) {
                 resultMessage = "Roll again!";
-            } else {
+            }
+            else {
                 resultMessage = "TURN OVER!";
             }
-
             if (resultContainer) {
-                resultContainer.textContent = `You rolled: ${die1} and ${die2}. Result: ${resultMessage}`;
+                resultContainer.textContent = "You rolled: ".concat(die1, " and ").concat(die2, ". Result: ").concat(resultMessage);
             }
         });
     }
 }
-
 // Call the main function when the DOM content is loaded
 document.addEventListener('DOMContentLoaded', main);
