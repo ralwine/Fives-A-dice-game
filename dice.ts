@@ -1,6 +1,7 @@
 // Define a function to roll a single die
 function rollDie(): number {
     return Math.floor(Math.random() * 6) + 1;
+    return Math.floor(Math.random() * 6) + 1;
 }
 
 // Define a function to roll two dice and return the sum
@@ -38,5 +39,6 @@ function main() {
     }
 }
 
-// Call the main function when the DOM content is loaded
-document.addEventListener('DOMContentLoaded', main);
+// Run the main function
+//main();
+console.log(rollTwoDice());
