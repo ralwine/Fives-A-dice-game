@@ -1,7 +1,6 @@
 // Define a function to roll a single die
 function rollDie(): number {
     return Math.floor(Math.random() * 6) + 1;
-    return Math.floor(Math.random() * 6) + 1;
 }
 
 // Define a function to roll two dice and return the sum
@@ -16,6 +15,7 @@ function rollTwoDice(): { die1: number, die2: number, rollSum: number } {
 function main() {
     const resultContainer = document.getElementById('result');
     const rollButton = document.getElementById('rollButton');
+    
     console.log('Button clicked');
     if (resultContainer && rollButton) {
         rollButton.addEventListener('click', function () {
@@ -24,6 +24,7 @@ function main() {
 
             if (die1 === 6 && die2 === 6) {
                 resultMessage = "Bus Crash!!!!!, TURN OVER!";
+                
             } else if (die1 === die2) {
                 resultMessage = "Roll again!";
             } else if (rollSum === 5 || die1 === 5 || die2 === 5) {
@@ -39,6 +40,5 @@ function main() {
     }
 }
 
-// Run the main function
-//main();
+
 console.log(rollTwoDice());
